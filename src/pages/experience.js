@@ -3,7 +3,7 @@ import { Card, CardContent, Typography } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: '#301934',
+    backgroundColor: '#1b77bb',
     padding: theme.spacing(4),
     width: '100%',
   },

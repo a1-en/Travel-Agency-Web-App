@@ -4,10 +4,12 @@ import { makeStyles } from '@material-ui/core/styles';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 const useStyles = makeStyles((theme) => ({
   footer: {
-    backgroundColor: '#301934',
+    backgroundColor: '#1b77bb',
     color: '#FFFFFF',
     padding: theme.spacing(4),
     textAlign: 'center',
@@ -15,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
   divider: {
     backgroundColor: '#FFFFFF',
     margin: '20px auto',
-    width: '80%',
+    width: '100%',
   },
   icon: {
     marginRight: theme.spacing(1),
@@ -25,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    flexDirection: 'column', // Align items in column layout
   },
 }));
 
@@ -33,27 +36,42 @@ const Footer = () => {
 
   return (
     <footer className={classes.footer}>
-      <Typography variant="h6" gutterBottom>
-        Contact
-      </Typography>
+      
       <Divider className={classes.divider} />
-      <Grid container spacing={2} justifyContent="center">
-        <Grid item xs={12} sm={4} className={classes.contactItem}>
+      <Grid container spacing={3} justifyContent="center">
+        {/* Phone */}
+        <Grid item xs={6} sm={2} className={classes.contactItem}>
           <PhoneIcon className={classes.icon} />
           <Typography variant="body1">
-            +923343788557
+            +923320002230
           </Typography>
         </Grid>
-        <Grid item xs={12} sm={4} className={classes.contactItem}>
+        {/* Facebook */}
+        
+        {/* Email */}
+        <Grid item xs={6} sm={2} className={classes.contactItem}>
           <EmailIcon className={classes.icon} />
           <Typography variant="body1">
-            <Link href="mailto:techalone2@gmail.com" color="inherit">techalone2@gmail.com</Link>
+            <Link href="mailto:info@sfalitravels.com" color="inherit">info@sfalitravels.com</Link>
+          </Typography>
+        </Grid><Grid item xs={6} sm={2} className={classes.contactItem}>
+          <FacebookIcon className={classes.icon} />
+          <Typography variant="body1">
+            <Link href="https://www.facebook.com/profile.php?id=100086504282600&mibextid=kFxxJD" target="_blank" rel="noopener noreferrer" color="inherit">Facebook</Link>
           </Typography>
         </Grid>
-        <Grid item xs={12} sm={4} className={classes.contactItem}>
+        {/* Instagram */}
+        <Grid item xs={6} sm={2} className={classes.contactItem}>
+          <InstagramIcon className={classes.icon} />
+          <Typography variant="body1">
+            <Link href="https://www.instagram.com/sfalitravelservices?igsh=d3dxNWtlMTB0N3hj&utm_source=qr" target="_blank" rel="noopener noreferrer" color="inherit">Instagram</Link>
+          </Typography>
+        </Grid>
+        {/* LinkedIn */}
+        <Grid item xs={6} sm={2} className={classes.contactItem}>
           <LinkedInIcon className={classes.icon} />
           <Typography variant="body1">
-            <Link href="https://www.linkedin.com/in/imran-abbasi-30bb7b198" target="_blank" rel="noopener noreferrer" color="inherit">Imran Abbasi</Link>
+            <Link href="https://www.linkedin.com/company/sf-ali-travel-services/" target="_blank" rel="noopener noreferrer" color="inherit">LinkedIn</Link>
           </Typography>
         </Grid>
       </Grid>

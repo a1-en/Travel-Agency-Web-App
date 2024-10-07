@@ -2,6 +2,8 @@ import React from 'react';
 import { Button, useMediaQuery, useTheme } from '@mui/material';
 import imran from '../../src/images/imran.jpg';
 import resume from '../../src/images/resume.pdf';
+import whatsapp from '../../src/images/123.png'; // Import the WhatsApp logo
+import './HeroSection.css'; // Import the CSS file
 
 const HeroSection = () => {
   const theme = useTheme();
@@ -11,38 +13,68 @@ const HeroSection = () => {
     window.open(resume);
   };
 
+  const handleWhatsAppContact = () => {
+    // Constructing the WhatsApp API link
+    const phoneNumber = '+923320002230';
+    const message = encodeURIComponent('Hello SF Ali Travels, I am interested in your services.');
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+
+    // Opening the WhatsApp chat window
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
-    <div style={{
-      display: 'flex',
-      flexDirection: isSmallScreen ? 'column' : 'row',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      padding: '50px'
+    <div style={{ 
+      position: 'relative', 
+      padding: '50px',
+      backgroundImage: 'url("https://example.com/path-to-your-background-image.jpg")', // Replace with your background image URL
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
     }}>
+      {/* WhatsApp Logo and Number */}
+      <a 
+        href="https://wa.me/+923320002230" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="whatsapp-logo"
+      >
+        <img src={whatsapp} alt="WhatsApp" style={{ width: '48px', height: '48px', marginRight: '10px' }} /> {/* Made larger */}
+      </a>
+
       <div style={{
-        flex: 1,
-        paddingRight: isSmallScreen ? '0' : '50px',
-        paddingBottom: isSmallScreen ? '20px' : '0',
-        textAlign: isSmallScreen ? 'center' : 'left'
+        display: 'flex',
+        flexDirection: isSmallScreen ? 'column' : 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
       }}>
-        <h1>Full Stack Developer</h1>
-        <p>
-          Passionate Full Stack Developer with a strong foundation in front-end technologies. Seeking
-          opportunities to contribute my skills and creativity to dynamic projects, while continuously
-          expanding my knowledge in Web development. Open to collaborative environments that foster
-          learning and growth.
-        </p>
-        <Button variant="contained" color="primary" onClick={handleResumeDownload}>Resume</Button>
-      </div>
-      <div style={{
-        flex: 1,
-        textAlign: isSmallScreen ? 'center' : 'right'
-      }}>
-        <img src={imran} alt="Web Developer" style={{
-          width: isSmallScreen ? '300px' : '400px',
-          height: isSmallScreen ? '300px' : '400px',
-          borderRadius: '50%'
-        }} />
+        <div style={{
+          flex: 1,
+          paddingRight: isSmallScreen ? '0' : '50px',
+          paddingBottom: isSmallScreen ? '20px' : '0',
+          textAlign: isSmallScreen ? 'center' : 'left'
+        }}>
+          <div style={{ padding: '50px', textAlign: 'center', animation: 'fadeIn 1s ease-in' }}>
+            <h1>Welcome to SF Ali Travels</h1>
+            <p>
+            Embark on unforgettable journeys with us! Whether you're dreaming of exploring the picturesque landscapes of our Northern Pakistan, experiencing the vibrant cultures of international countries, or fulfilling your spiritual aspirations with our personalized Umrah and Hajj packages, we've got you covered. Join us on this adventure as we curate tailor-made travel experiences, designed to create lasting memories and enrich your life. Subscribe now to stay updated on our latest travel offerings, insider tips, and exclusive deals. Let's make your travel dreams a reality!            </p>
+          
+          </div>
+        </div>
+        <div style={{
+          flex: 1,
+          textAlign: isSmallScreen ? 'center' : 'right'
+        }}>
+          {/* Replace with your live Umrah video */}
+          <iframe 
+            title="Live Umrah Video"
+            width={isSmallScreen ? '300' : '600'}
+            height={isSmallScreen ? '200' : '300'}
+            src="https://www.youtube.com/embed/_vFA07M0rw4?modestbranding=1&rel=0&controls=0&showinfo=0"
+            frameBorder="0"
+            allowFullScreen
+          />
+        </div>
       </div>
     </div>
   );

@@ -9,7 +9,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#4B0082', // Dark purple
+      main: '#1b77bb', // Dark purple
     },
     secondary: {
       main: '#FFFFFF', // White

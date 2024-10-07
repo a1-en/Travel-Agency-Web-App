@@ -6,7 +6,7 @@ import image2 from '../../src/images/shoestore.PNG';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: '#301934',
+    backgroundColor: '#1b77bb',
     padding: theme.spacing(4),
     width: '100%',
   },
@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center', // Center align the project title
   },
   projectDescription: {
-    color: '#301934',
+    color: '#1b77bb',
   },
   cardContent: {
     flexGrow: 1,

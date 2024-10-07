@@ -1,0 +1,26 @@
+@keyframes jump {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  .whatsapp-logo {
+    position: fixed;
+    bottom: 10px; /* Position at bottom */
+    left: 10px; /* Position at left */
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    animation: jump 0.6s ease-in-out infinite; /* Add jumping animation */
+  }
+  

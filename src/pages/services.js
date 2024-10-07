@@ -4,7 +4,7 @@ import { Container, Grid, Card, CardContent, Typography } from '@material-ui/cor
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: '#301934',
+    backgroundColor: '#1b77bb',
     padding: theme.spacing(8, 0), // Add padding top and bottom
   },
   card: {
@@ -19,16 +19,17 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     fontSize: 64,
-    color: '#301934',
+    color: '#1b77bb',
   },
   title: {
-    color: '#301934',
+    color: '#1b77bb',
     fontWeight: 'bold',
     marginBottom: theme.spacing(2),
   },
   description: {
     color: '#333333',
-  }, servicesHeading: {
+  },
+  servicesHeading: {
     color: '#FFFFFF',
     textAlign: 'center',
     marginBottom: theme.spacing(4), // Add bottom margin
@@ -40,25 +41,41 @@ const Services = () => {
 
   const services = [
     {
-      title: 'UI/UX Design',
-      description: 'We craft intuitive and visually appealing user interfaces to enhance user experience.',
-      icon: '🎨',
+      title: 'Airline Tickets',
+      description: 'We provide affordable airline tickets to various destinations around the globe.',
+      icon: '✈️',
     },
     {
-      title: 'Web Development',
-      description: 'We develop high-quality websites with modern technologies and responsive designs.',
-      icon: '🌐',
+      title: 'Umrah Packages',
+      description: 'We offer comprehensive Umrah packages to ensure a comfortable pilgrimage experience.',
+      icon: '🕋',
     },
     {
-      title: 'Mobile App Development',
-      description: 'We build native and cross-platform mobile applications tailored to your needs.',
-      icon: '📱',
+      title: 'Tour and Holidays',
+      description: 'We plan and organize memorable tours and holiday packages for you and your family.',
+      icon: '🌴',
+    },
+    {
+      title: 'Visa Services',
+      description: 'We assist with visa applications and ensure a smooth and hassle-free process.',
+      icon: '🛂',
+    },
+    {
+      title: 'Hotel Reservation',
+      description: 'We offer hotel reservation services to ensure comfortable and affordable stays.',
+      icon: '🏨',
+    },
+    {
+      title: 'Transport Services',
+      description: 'We provide reliable and efficient transport services to meet your travel needs.',
+      icon: '🚗',
     },
   ];
 
   return (
     <div className={classes.root}>
-      <Container maxWidth="lg">   <Typography variant="h4" className={classes.servicesHeading} gutterBottom>
+      <Container maxWidth="lg">
+        <Typography variant="h4" className={classes.servicesHeading} gutterBottom>
           Services
         </Typography>
         <Grid container spacing={4} justifyContent="center">
