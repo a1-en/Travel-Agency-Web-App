@@ -1,44 +1,46 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Container, Grid, Card, CardContent, Typography } from '@material-ui/core';
+import { Container, Grid, Card, CardContent, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: '#1b77bb',
-    padding: theme.spacing(8, 0), // Add padding top and bottom
-  },
-  card: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 16,
-    boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)',
-    height: '100%',
-    transition: 'transform 0.3s ease-in-out', // Add transition effect
-    '&:hover': {
-      transform: 'scale(1.05)', // Scale up on hover
-    },
-  },
-  icon: {
-    fontSize: 64,
-    color: '#1b77bb',
-  },
-  title: {
-    color: '#1b77bb',
-    fontWeight: 'bold',
-    marginBottom: theme.spacing(2),
-  },
-  description: {
-    color: '#333333',
-  },
-  servicesHeading: {
-    color: '#FFFFFF',
-    textAlign: 'center',
-    marginBottom: theme.spacing(4), // Add bottom margin
+// Styled components
+const RootContainer = styled('div')(({ theme }) => ({
+  backgroundColor: '#1b77bb',
+  padding: theme.spacing(8, 0), // Add padding top and bottom
+}));
+
+const StyledCard = styled(Card)(({ theme }) => ({
+  backgroundColor: '#FFFFFF',
+  borderRadius: 16,
+  boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)',
+  height: '100%',
+  transition: 'transform 0.3s ease-in-out', // Add transition effect
+  '&:hover': {
+    transform: 'scale(1.05)', // Scale up on hover
   },
 }));
 
-const Services = () => {
-  const classes = useStyles();
+const TitleTypography = styled(Typography)(({ theme }) => ({
+  color: '#1b77bb',
+  fontWeight: 'bold',
+  marginBottom: theme.spacing(2),
+}));
 
+const DescriptionTypography = styled(Typography)(({ theme }) => ({
+  color: '#333333',
+}));
+
+const ServicesHeading = styled(Typography)(({ theme }) => ({
+  color: '#FFFFFF',
+  textAlign: 'center',
+  marginBottom: theme.spacing(4), // Add bottom margin
+}));
+
+const IconTypography = styled(Typography)(({ theme }) => ({
+  fontSize: 64,
+  color: '#1b77bb',
+}));
+
+const Services = () => {
   const services = [
     {
       title: 'Airline Tickets',
@@ -73,32 +75,32 @@ const Services = () => {
   ];
 
   return (
-    <div className={classes.root}>
+    <RootContainer>
       <Container maxWidth="lg">
-        <Typography variant="h4" className={classes.servicesHeading} gutterBottom>
+        <ServicesHeading variant="h4" gutterBottom>
           Services
-        </Typography>
+        </ServicesHeading>
         <Grid container spacing={4} justifyContent="center">
           {services.map((service, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
-              <Card className={classes.card}>
+              <StyledCard>
                 <CardContent>
-                  <Typography variant="h5" className={classes.title} gutterBottom>
+                  <TitleTypography variant="h5" gutterBottom>
                     {service.title}
-                  </Typography>
-                  <Typography variant="body1" className={classes.description} gutterBottom>
+                  </TitleTypography>
+                  <DescriptionTypography variant="body1" gutterBottom>
                     {service.description}
-                  </Typography>
-                  <Typography variant="h3" align="center" className={classes.icon}>
+                  </DescriptionTypography>
+                  <IconTypography align="center">
                     {service.icon}
-                  </Typography>
+                  </IconTypography>
                 </CardContent>
-              </Card>
+              </StyledCard>
             </Grid>
           ))}
         </Grid>
       </Container>
-    </div>
+    </RootContainer>
   );
 };
 

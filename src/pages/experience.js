@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent, Typography } from '@mui/material';
-import { makeStyles } from '@mui/styles';
-const useStyles = makeStyles((theme) => ({
+import { styled } from '@mui/material/styles';
+const useStyles = styled((theme) => ({
   root: {
     backgroundColor: '#1b77bb',
     padding: theme.spacing(4),

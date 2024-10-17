@@ -1,7 +1,18 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, Typography, Button, Drawer, List, ListItem, ListItemText, Divider, useMediaQuery, IconButton } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu'; // Import the Menu icon
-import LogoImage from '../../src/images/logo.png'; // Replace with your actual logo image path
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  Divider,
+  useMediaQuery,
+  IconButton,
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';  // Import the Menu icon
 
 const Navbar = ({ onHeroClick, onProjectsClick, onExperienceClick, onSkillsClick, onServicesClick, onTestimonialClick, onFooterClick }) => {
   const isSmallScreen = useMediaQuery((theme) => theme.breakpoints.down('sm'));
@@ -51,10 +62,9 @@ const Navbar = ({ onHeroClick, onProjectsClick, onExperienceClick, onSkillsClick
     <div>
       <AppBar position="static" sx={{ backgroundColor: '#1b77bb' }}>
         <Toolbar>
-          <img src={LogoImage} alt="Logo" style={{ width: '40px', height: '40px', marginRight: '10px' }} /> {/* Logo image */}
           <Typography variant="h6" component="div" sx={{ mr: 'auto' }}>
             <a href="/" style={{ textDecoration: 'none', color: 'inherit' }} onClick={onHeroClick}>
-              SF Ali Travel Services
+              Travel n tour
             </a>
           </Typography>
           {isSmallScreen ? (

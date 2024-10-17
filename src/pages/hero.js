@@ -15,8 +15,8 @@ const HeroSection = () => {
 
   const handleWhatsAppContact = () => {
     // Constructing the WhatsApp API link
-    const phoneNumber = '+923320002230';
-    const message = encodeURIComponent('Hello SF Ali Travels, I am interested in your services.');
+    const phoneNumber = '+32012112412';
+    const message = encodeURIComponent(' I am interested in your services.');
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
     // Opening the WhatsApp chat window
@@ -34,7 +34,7 @@ const HeroSection = () => {
     }}>
       {/* WhatsApp Logo and Number */}
       <a 
-        href="https://wa.me/+923320002230" 
+        href="https://wa.me/+9254244" 
         target="_blank" 
         rel="noopener noreferrer"
         className="whatsapp-logo"
@@ -55,7 +55,7 @@ const HeroSection = () => {
           textAlign: isSmallScreen ? 'center' : 'left'
         }}>
           <div style={{ padding: '50px', textAlign: 'center', animation: 'fadeIn 1s ease-in' }}>
-            <h1>Welcome to SF Ali Travels</h1>
+            <h1>Welcome to Travel n Tour</h1>
             <p>
             Embark on unforgettable journeys with us! Whether you're dreaming of exploring the picturesque landscapes of our Northern Pakistan, experiencing the vibrant cultures of international countries, or fulfilling your spiritual aspirations with our personalized Umrah and Hajj packages, we've got you covered. Join us on this adventure as we curate tailor-made travel experiences, designed to create lasting memories and enrich your life. Subscribe now to stay updated on our latest travel offerings, insider tips, and exclusive deals. Let's make your travel dreams a reality!            </p>
           

@@ -1,48 +1,35 @@
 import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Container, TextField, Button, Typography } from '@material-ui/core';
+import { Container, TextField, Button, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: '#1b77bb', // Blue background
-    minHeight: '100vh', // Ensure the background covers the full height
-    display: 'flex',
-    alignItems: 'center', // Center vertically
-    justifyContent: 'center', // Center horizontally
-    padding: theme.spacing(2),
-  },
-  formContainer: {
-    backgroundColor: '#FFFFFF', // White form background
-    padding: theme.spacing(4),
-    borderRadius: 16,
-    boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)',
-    width: '100%', // Make it responsive
-    maxWidth: 500, // Set a max width for the form
-  },
-  title: {
-    color: '#1b77bb',
-    fontWeight: 'bold',
-    marginBottom: theme.spacing(2),
-    textAlign: 'center',
-  },
-  field: {
-    marginBottom: theme.spacing(2),
-  },
-  submitButton: {
-    backgroundColor: '#1b77bb',
-    color: '#FFFFFF',
-    '&:hover': {
-      backgroundColor: '#155a8a',
-    },
-  },
-  result: {
-    textAlign: 'center',
-    marginTop: theme.spacing(2),
+// Styled Container for the entire form
+const StyledContainer = styled(Container)(({ theme }) => ({
+  backgroundColor: '#FFFFFF', // White form background
+  padding: theme.spacing(4),
+  borderRadius: 16,
+  boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)',
+  width: '70%', // Make it responsive
+  maxWidth: 500, // Set a max width for the form
+}));
+
+// Styles for the title
+const TitleTypography = styled(Typography)(({ theme }) => ({
+  color: '#1b77bb',
+  fontWeight: 'bold',
+  marginBottom: theme.spacing(2),
+  textAlign: 'center',
+}));
+
+// Styles for the submit button
+const SubmitButton = styled(Button)(({ theme }) => ({
+  backgroundColor: '#1b77bb',
+  color: '#FFFFFF',
+  '&:hover': {
+    backgroundColor: '#155a8a',
   },
 }));
 
 const RequestQuote = () => {
-  const classes = useStyles();
   const [result, setResult] = useState('');
 
   const onSubmit = async (event) => {
@@ -75,50 +62,48 @@ const RequestQuote = () => {
   };
 
   return (
-    <div className={classes.root}>
-      <Container className={classes.formContainer}>
-        <Typography variant="h4" className={classes.title}>
-          Contact Us
-        </Typography>
-        <form onSubmit={onSubmit}>
-          <TextField
-            name="name"
-            className={classes.field}
-            fullWidth
-            label="Name"
-            required
-          />
-          <TextField
-            name="email"
-            className={classes.field}
-            fullWidth
-            label="Email"
-            type="email"
-            required
-          />
-          <TextField
-            name="number"
-            className={classes.field}
-            fullWidth
-            label="Phone Number"
-            required
-          />
-          <TextField
-            name="message"
-            className={classes.field}
-            fullWidth
-            label="Message"
-            multiline
-            rows={4}
-            required
-          />
-          <Button type="submit" variant="contained" className={classes.submitButton}>
-            Submit
-          </Button>
-        </form>
-        {result && <Typography className={classes.result}>{result}</Typography>}
-      </Container>
-    </div>
+    <StyledContainer>
+      <TitleTypography variant="h4">
+        Contact Us
+      </TitleTypography>
+      <form onSubmit={onSubmit}>
+        <TextField
+          name="name"
+          fullWidth
+          label="Name"
+          required
+          sx={{ mb: 2 }} // Use the sx prop for margin bottom
+        />
+        <TextField
+          name="email"
+          fullWidth
+          label="Email"
+          type="email"
+          required
+          sx={{ mb: 2 }} // Use the sx prop for margin bottom
+        />
+        <TextField
+          name="number"
+          fullWidth
+          label="Phone Number"
+          required
+          sx={{ mb: 2 }} // Use the sx prop for margin bottom
+        />
+        <TextField
+          name="message"
+          fullWidth
+          label="Message"
+          multiline
+          rows={4}
+          required
+          sx={{ mb: 2 }} // Use the sx prop for margin bottom
+        />
+        <SubmitButton type="submit" variant="contained" fullWidth>
+          Submit
+        </SubmitButton>
+      </form>
+      {result && <Typography textAlign="center" sx={{ mt: 2 }}>{result}</Typography>}
+    </StyledContainer>
   );
 };
 

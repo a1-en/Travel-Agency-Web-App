@@ -1,10 +1,10 @@
 import React from 'react';
-import { Card, CardContent, Typography, Grid } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { Card, CardContent, Typography, Grid } from '@mui/material';
+import { styled } from '@mui/material/styles';
 import image from '../../src/images/222.PNG';
 import image2 from '../../src/images/shoestore.PNG';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = styled((theme) => ({
   root: {
     backgroundColor: '#1b77bb',
     padding: theme.spacing(4),
